@@ -49,4 +49,12 @@ public class MainTest {
         //关闭容器 会调用销毁方法
         applicationContext.close();
     }
+    @Test
+    public void test04(){
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfLifeCycle.class);
+        System.out.println("容器创建完成");
+
+        //关闭容器 会调用销毁方法
+        applicationContext.close();
+    }
 }

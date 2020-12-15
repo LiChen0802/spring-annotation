@@ -2,6 +2,7 @@ package com.li.config;
 
 import com.li.bean.Car;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
@@ -18,8 +19,12 @@ import org.springframework.context.annotation.Scope;
  * 销毁   ： 单实例： 容器关闭 进行销毁
  *          多实例： 容器不会对这个Bean进行管理 所以不会自动调用销毁  需要手都调用
  * 1),指定初始化和销毁方法
- *      指定 init-method destroy-method 方法     （Car.class）
+ *      @Bean 注解中 指定 init-method destroy-method 方法     （Car.class）
+ * 2),通过让Bean 实现 InitializingBean(定义初始化逻辑)，         (Cat.class)
+ *              实现 DisposableBean  (定义销毁逻辑)
  */
+
+@ComponentScan("com.li.bean")
 @Configuration
 public class MainConfigOfLifeCycle {
 
@@ -28,4 +33,5 @@ public class MainConfigOfLifeCycle {
     public Car car(){
         return new Car();
     }
+
 }
