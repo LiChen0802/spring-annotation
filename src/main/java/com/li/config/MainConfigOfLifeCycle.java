@@ -25,6 +25,8 @@ import org.springframework.context.annotation.Scope;
  * 3),通过注解
  *      @PostConstruct : 在Bean创建完成并且属性复制完成, 来执行这个注解标注的初始化方法
  *      @PreDestroy    : 在容器销毁Bean之前通知我们进行清理工作
+ * 4),BeanPostProcessor接口: Bean的后置处理器 在Bean初始化前后进行处理 ×
+ *
  */
 
 @ComponentScan("com.li.bean")
