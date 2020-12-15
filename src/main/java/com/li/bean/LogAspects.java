@@ -16,6 +16,9 @@ public class LogAspects {
     public void pointCut() {
     }
 
+    //JoinPoint 一定要放在参数表的第一位
+
+
     //指定切入点
     @Before("pointCut()")
     public void logStart(JoinPoint joinPoint) {

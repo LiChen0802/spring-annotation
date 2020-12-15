@@ -45,7 +45,7 @@ public class MainConfig {
     }
 
     /**
-     * @Conditional : 按照一定条件进行判断 满足条件时才给容器中注册bean
+* @Conditional : 按照一定条件进行判断 满足条件时才给容器中注册bean
      */
     @Conditional({WindowCondition.class, LinuxCondition.class})
     @Bean
