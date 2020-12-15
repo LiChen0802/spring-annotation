@@ -22,6 +22,9 @@ import org.springframework.context.annotation.Scope;
  *      @Bean 注解中 指定 init-method destroy-method 方法     （Car.class）
  * 2),通过让Bean 实现 InitializingBean(定义初始化逻辑)，         (Cat.class)
  *              实现 DisposableBean  (定义销毁逻辑)
+ * 3),通过注解
+ *      @PostConstruct : 在Bean创建完成并且属性复制完成, 来执行这个注解标注的初始化方法
+ *      @PreDestroy    : 在容器销毁Bean之前通知我们进行清理工作
  */
 
 @ComponentScan("com.li.bean")

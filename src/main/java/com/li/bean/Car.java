@@ -8,6 +8,6 @@ public class Car {
         System.out.println("Car Init --------");
     }
     public void destroy(){
-        System.out.println("Car destroy --------");
+        System.out.println("Car.....PreDestroy");
     }
 }

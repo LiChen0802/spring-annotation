@@ -17,7 +17,7 @@ public class Cat implements InitializingBean, DisposableBean {
     //销毁方法
     @Override
     public void destroy() throws Exception {
-        System.out.println("Cat destroy......");
+        System.out.println("Cat.....PreDestroy");
     }
 
 }
