@@ -1,9 +1,5 @@
-import com.li.bean.Person;
-import com.li.config.MainConfig;
-import com.li.config.MainConfigOfAutowired;
-import com.li.config.MainConfigOfLifeCycle;
-import com.li.config.MainConfigOfPropertyValues;
-import com.li.service.BookService;
+import com.li.bean.*;
+import com.li.config.*;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
@@ -84,5 +80,13 @@ public class MainTest {
     public void test06() {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfigOfAutowired.class);
         printBean(applicationContext);
+    }
+
+    @Test
+    public void testAop(){
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MyConfigOfAOP.class);
+        MathCalculator mathCalculator = applicationContext.getBean(MathCalculator.class);
+        mathCalculator.div(1,1);
+        applicationContext.close();
     }
 }
